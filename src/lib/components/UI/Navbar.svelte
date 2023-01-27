@@ -12,7 +12,10 @@
 	import Icon from '@iconify/svelte';
 
 	import { goto } from '$app/navigation';
+	import { get } from 'svelte/store';
 	import { getAuth, GoogleAuthProvider, signOut } from 'firebase/auth';
+
+	import { isLoggedIn } from '../../tools/stores';
 
 	const handleSignOut = () => {
 		const auth = getAuth();
