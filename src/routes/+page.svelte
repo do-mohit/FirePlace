@@ -1,3 +1,7 @@
 <script>
-	import { Alert } from 'flowbite-svelte';
+	import FileDeck from '../lib/components/FileDeck.svelte';
+	import Header from '../lib/components/Header.svelte';
 </script>
+
+<Header />
+<FileDeck />

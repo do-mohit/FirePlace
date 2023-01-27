@@ -15,11 +15,15 @@
 	import { goto } from '$app/navigation';
 	import { getAuth, GoogleAuthProvider, signOut } from 'firebase/auth';
 
+	import { isLoggedIn } from '../tools/stores';
+	import { get } from 'svelte/store';
+
 	const handleSignOut = () => {
 		const auth = getAuth();
 		signOut(auth)
 			.then(() => {
 				localStorage.removeItem('uid');
+				console.log('Logging Out');
 				goto('/login');
 			})
 			.catch((err) => {
