@@ -1,6 +1,6 @@
 <script>
-	import FileDeck from '../lib/components/FileDeck.svelte';
-	import Header from '../lib/components/Header.svelte';
+	import FileDeck from '../lib/components/Content/FileDeck.svelte';
+	import Header from '../lib/components/UI/Header.svelte';
 </script>
 
 <Header />

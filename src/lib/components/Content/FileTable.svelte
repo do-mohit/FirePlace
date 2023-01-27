@@ -1,5 +1,5 @@
 <script>
-	import { Button } from 'flowbite-svelte';
+	import Icon from '@iconify/svelte';
 
 	import { getStorage, ref, getDownloadURL, deleteObject } from 'firebase/storage';
 	function bytesToSize(bytes) {
@@ -42,31 +42,33 @@
 	export let functionProp = () => {};
 </script>
 
-<table class="w-screen px-10">
+<table class="w-screen">
 	<thead>
 		<tr>
-			<th class="w-1/4">File Name</th>
-			<th class="w-1/4">Uploaded</th>
-			<th class="w-1/4">File Size</th>
-			<th class="w-1/4">Actions</th>
+			<th class="w-2/6 md:w-1/4 mx-1">File Name</th>
+			<th class="w-1/6 md:w-1/4 mx-1">Uploaded</th>
+			<th class="w-1/6 md:w-1/4 mx-1">File Size</th>
+			<th class="w-2/6 md:w-1/4 mx-1">Actions</th>
 		</tr>
 	</thead>
 	<tbody>
 		{#each data as { name, timeCreated, size }}
 			<tr>
 				<th scope="row">{name}</th>
-				<td class="text-center">{timeCreated.substring(0, 10)}</td>
-				<td class="text-center">{bytesToSize(size)}</td>
-				<td class="text-center">
+				<td class="text-center text-xsm md:text-lg">{timeCreated.substring(0, 10)}</td>
+				<td class="text-center text-xsm md:text-lg">{bytesToSize(size)}</td>
+				<td class="flex items-center justify-center md:flex-row flex-col">
 					<button
 						type="button"
 						class="inline-block mx-2 my-1 px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-						on:click={() => downloadFile(folder, name)}>Download</button
+						on:click={() => downloadFile(folder, name)}
+						><Icon icon="ic:baseline-file-download" width="16" color="white" /></button
 					>
 					<button
 						type="button"
 						class="inline-block mx-2 my-1 px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out"
-						on:click={() => deleteFile(folder, name)}>Delete</button
+						on:click={() => deleteFile(folder, name)}
+						><Icon icon="material-symbols:delete-forever" color="white" width="16" /></button
 					>
 				</td>
 			</tr>

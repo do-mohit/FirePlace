@@ -112,10 +112,10 @@
 				/></svg
 			>
 		</span>
-		<p class="mb-2 text-gray-500 dark:text-gray-400">
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint
-			explicabo ...
-		</p>
+		<UploadRow folder="clients" functionProp={() => getFileData()} />
+		{#if files.clients.length > 0}
+			<FileTable data={files.work} folder="clients" functionProp={() => getFileData()} />
+		{/if}
 	</AccordionItem>
 	<AccordionItem>
 		<span slot="header">Pictures</span>
@@ -149,10 +149,10 @@
 				/></svg
 			>
 		</span>
-		<p class="mb-2 text-gray-500 dark:text-gray-400">
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint
-			explicabo ...
-		</p>
+		<UploadRow folder="pictures" functionProp={() => getFileData()} />
+		{#if files.pictures.length > 0}
+			<FileTable data={files.work} folder="pictures" functionProp={() => getFileData()} />
+		{/if}
 	</AccordionItem>
 	<AccordionItem>
 		<span slot="header">Misc Files</span>
@@ -186,9 +186,9 @@
 				/></svg
 			>
 		</span>
-		<p class="mb-2 text-gray-500 dark:text-gray-400">
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint
-			explicabo ...
-		</p>
+		<UploadRow folder="misc" functionProp={() => getFileData()} />
+		{#if files.misc.length > 0}
+			<FileTable data={files.work} folder="misc" functionProp={() => getFileData()} />
+		{/if}
 	</AccordionItem>
 </Accordion>

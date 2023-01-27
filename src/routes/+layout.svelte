@@ -8,7 +8,7 @@
 	import firebase from '../firebase/firebase';
 	import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
-	import Navbar from '../lib/components/Navbar.svelte';
+	import Navbar from '../lib/components/UI/Navbar.svelte';
 
 	onMount(() => {
 		const auth = getAuth();
