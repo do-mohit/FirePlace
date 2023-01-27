@@ -3,6 +3,10 @@
 
 	import { getStorage, ref, getMetadata, listAll } from 'firebase/storage';
 	import { onMount } from 'svelte';
+
+	import FileTable from './FileTable.svelte';
+	import UploadRow from './UploadRow.svelte';
+
 	const storage = getStorage();
 	const refs = ['work', 'clients', 'pictures', 'misc'];
 	$: files = {
@@ -71,10 +75,10 @@
 				/></svg
 			>
 		</span>
-		<p class="mb-2 text-gray-500 dark:text-gray-400">
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint
-			explicabo ...
-		</p>
+		<UploadRow folder="work" functionProp={() => getFileData()} />
+		{#if files.work.length > 0}
+			<FileTable data={files.work} folder="work" functionProp={() => getFileData()} />
+		{/if}
 	</AccordionItem>
 	<AccordionItem>
 		<span slot="header">Client File</span>
