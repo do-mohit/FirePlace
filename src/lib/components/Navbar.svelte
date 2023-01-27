@@ -11,6 +11,21 @@
 		DropdownHeader,
 		DropdownDivider
 	} from 'flowbite-svelte';
+
+	import { goto } from '$app/navigation';
+	import { getAuth, GoogleAuthProvider, signOut } from 'firebase/auth';
+
+	const handleSignOut = () => {
+		const auth = getAuth();
+		signOut(auth)
+			.then(() => {
+				localStorage.removeItem('uid');
+				goto('/login');
+			})
+			.catch((err) => {
+				console.error(err);
+			});
+	};
 </script>
 
 <Navbar let:hidden let:toggle>
@@ -24,7 +39,7 @@
 		>
 	</NavBrand>
 	<div class="flex items-center md:order-2">
-		<Avatar id="avatar-menu" src="/images/profile-picture-3.webp" />
+		<Avatar id="avatar-menu" src="" alt="dp" />
 		<NavHamburger on:click={toggle} class1="w-full md:flex md:w-auto md:order-1" />
 	</div>
 	<Dropdown placement="bottom" triggeredBy="#avatar-menu">
@@ -36,7 +51,7 @@
 		<DropdownItem>Settings</DropdownItem>
 		<DropdownItem>Earnings</DropdownItem>
 		<DropdownDivider />
-		<DropdownItem>Sign out</DropdownItem>
+		<DropdownItem on:click={handleSignOut}>Sign out</DropdownItem>
 	</Dropdown>
 	<NavUl {hidden}>
 		<NavLi href="/" active={true}>Home</NavLi>
