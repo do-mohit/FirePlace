@@ -22,10 +22,8 @@
 </script>
 
 <!-- Example of a form that Dropzone can take over -->
-<form action="/target" class="dropzone" id="my-form-{folder}" />
-
-<style>
-	.dropzone {
-		border: 2px dashed black;
-	}
-</style>
+<form
+	action="/target"
+	class="dropzone text-2xl flex items-center justify-center h-24 border-dashed border-black border-2 mb-4"
+	id="my-form-{folder}"
+/>
