@@ -42,13 +42,13 @@
 	export let functionProp = () => {};
 </script>
 
-<table class="w-11/12">
+<table class="w-full">
 	<thead>
 		<tr>
-			<th class="w-2/6 md:w-1/4 mx-1">File Name</th>
-			<th class="w-1/6 md:w-1/4 mx-1">Uploaded</th>
-			<th class="w-1/6 md:w-1/4 mx-1">File Size</th>
-			<th class="w-2/6 md:w-1/4 mx-1">Actions</th>
+			<th class="w-2/6 md:w-1/4 mx-2">File Name</th>
+			<th class="w-1/6 md:w-1/4 mx-2">Uploaded</th>
+			<th class="w-1/6 md:w-1/4 mx-2">File Size</th>
+			<th class="w-2/6 md:w-1/4 mx-2">Actions</th>
 		</tr>
 	</thead>
 	<tbody>
