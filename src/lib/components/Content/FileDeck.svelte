@@ -115,7 +115,7 @@
 			</span>
 			<UploadRow folder="clients" functionProp={() => getFileData()} />
 			{#if files.clients.length > 0}
-				<FileTable data={files.work} folder="clients" functionProp={() => getFileData()} />
+				<FileTable data={files.clients} folder="clients" functionProp={() => getFileData()} />
 			{/if}
 		</AccordionItem>
 		<AccordionItem>
@@ -152,7 +152,7 @@
 			</span>
 			<UploadRow folder="pictures" functionProp={() => getFileData()} />
 			{#if files.pictures.length > 0}
-				<FileTable data={files.work} folder="pictures" functionProp={() => getFileData()} />
+				<FileTable data={files.pictures} folder="pictures" functionProp={() => getFileData()} />
 			{/if}
 		</AccordionItem>
 		<AccordionItem>
@@ -189,7 +189,7 @@
 			</span>
 			<UploadRow folder="misc" functionProp={() => getFileData()} />
 			{#if files.misc.length > 0}
-				<FileTable data={files.work} folder="misc" functionProp={() => getFileData()} />
+				<FileTable data={files.misc} folder="misc" functionProp={() => getFileData()} />
 			{/if}
 		</AccordionItem>
 	</Accordion>
