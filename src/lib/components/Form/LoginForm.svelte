@@ -28,7 +28,7 @@
 	<div class="container-fluid px-6 py-10 h-full">
 		<div class="flex justify-center items-center flex-wrap h-full g-6 text-gray-800">
 			<div class="md:w-8/12 lg:w-6/12 mb-12 md:mb-0">
-				<img src="../../../loginimg.jpg" class="w-full" alt="Phone image" />
+				<img src="../../../loginform.jpg" class="w-full" alt="Phone image" />
 			</div>
 			<div class="md:w-8/12 lg:w-5/12 lg:ml-20">
 				<form on:submit={handleSubmit} class="mb-6">

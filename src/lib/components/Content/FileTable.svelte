@@ -42,7 +42,7 @@
 	export let functionProp = () => {};
 </script>
 
-<table class="w-screen">
+<table class="w-11/12">
 	<thead>
 		<tr>
 			<th class="w-2/6 md:w-1/4 mx-1">File Name</th>
